@@ -20,3 +20,14 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/dashboard-admin', function () {
+    return view('dashboard.index',[
+        'title' => 'Dashboard'
+    ]);
+});
+
+Route::get('/buku-tamu', function () {
+    return view('dashboard.visitors',[
+        'title' => 'Buku Tamu'
+    ]);
+});
