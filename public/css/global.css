@@ -1,0 +1,42 @@
+
+   body {
+}
+.bg-navbar{
+background-image: url('/asset/bg-navbar.png');
+background-repeat: no-repeat;
+}
+.navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+}
+.nav-item .btn-login-nav{
+    background: #7BB1FF;
+    color:white;
+}
+.nav-item{
+    color:white;
+}
+
+.form-floating .form-control label{
+    color:#747474;
+}
+@media (min-width: 320px) and (max-width: 767px){
+
+a .logo-navbar{
+    /* margin-left: -120px; */
+}
+
+.btn-login{
+    width: 150px;
+    margin-left: 90px;
+    background:#007bff;
+}
+
+}
+
+
+
+
