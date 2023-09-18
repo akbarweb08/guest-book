@@ -8,7 +8,7 @@
     <br>
         <img src="/asset/logo-login.png" class="img-fluid mt-3 mx-4" alt="">
 
-       <form action="" method="POST" class="mt-5"  style="margin-top:200px;">
+       <form action="login" method="POST" class="mt-5"  style="margin-top:200px;">
         @csrf
            <div class="form-floating rounded-pill mb-3">
                <input type="text" class="form-control rounded-pill" name="username" id="floatingInput" placeholder="Username">
