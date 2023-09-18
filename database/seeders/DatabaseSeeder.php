@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use App\Models\Visitor;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,16 @@ class DatabaseSeeder extends Seeder
                 'purpose' => 'meeting',
                 'out_at' => date('Y-m-d H:i:s P'),
                 'signature' => 'signature'
+            ]
+        );
+
+         User::create(
+            [
+
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'username' => 'admin',
+                'password' => bcrypt('@dmin123'),
             ]
         );
         // \App\Models\User::factory()->create([

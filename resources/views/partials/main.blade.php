@@ -56,10 +56,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto mt-2 mx-3">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Beranda <span class="sr-only"></span></a>
+                        <a class="nav-link" href="/">Beranda <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-login-nav" href="/login"> <i class="bi bi-box-arrow-in-right"></i> Login</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-box-arrow-in-right"></i> Masuk
+                          </button>
                     </li>
 
 
@@ -67,7 +69,38 @@
             </div>
         </div>
     </nav>
+<!-- Button trigger modal -->
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <img src="/asset/logo-login.png" class="img-fluid modal-title mx-4" alt="">
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="login" method="POST" class="" >
+        <div class="modal-body">
+                @csrf
+                   <div class="form-floating rounded-pill mb-3">
+                       <input type="text" class="form-control rounded-pill" name="username" id="floatingInput" placeholder="Username">
+                       <label for="floatingInput">Username</label>
+                   </div>
+                   <div class="form-floating rounded-pill mb-3">
+                       <input type="password" class="form-control rounded-pill" name="password" id="Password" placeholder="Nama">
+                       <label for="Password">Password</label>
+                   </div>
+                </div>
+                <button type="submit" class="btn btn-primary rounded-pill btn-login">Masuk</button>
+
+                <div class="modal-footer">
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>
     <div class="container mt-5 ">
         @yield('container')
     </div>

@@ -9,7 +9,7 @@ class VisitorController extends Controller
 {
     //
     public function visitor_form(){
-        return view('visitor.form');
+        return view('home');
     }
     public function index()
     {
@@ -35,19 +35,19 @@ class VisitorController extends Controller
             'signature' => request('signature')->store('signatures')
         ];
         $visitor = Visitor::create($data);
-        return redirect()->route('visitor.index');
+        return back();
     }
 
     public function delete($id){
         $visitor = Visitor::findOrFail($id);
         $visitor->delete();
-        return redirect()->route('visitor.index');
+        return back();
     }
 
     public function out($id){
         $visitor = Visitor::findOrFail($id);
         $visitor->out_at = date('Y-m-d H:i:s0');
         $visitor->save();
-        return redirect()->route('visitor.index');
+        return back();
     }
 }

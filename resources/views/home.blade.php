@@ -12,10 +12,32 @@
 
 
 @section('container')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-
+bootstrap/4.3.1/css/bootstrap.css">
 
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link type="text/css"
+href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-
+      street/jquery-ui.css" rel="stylesheet">
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+</script>
+<script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js">
+</script>
+
+<link rel="stylesheet" type="text/css" href="http://keith-
+wood.name/css/jquery.signature.css">
+<style>
+ .kbw-signature { width: 100%; height: 200px;}
+ #sig canvas{
+     width: 100% !important;
+     height: auto;
+ }
+</style>
 <div class="container mt-5"  style="margin-top:200px;">
  <br>
-    <form action="" method="POST" class="mt-5"  style="margin-top:200px;">
+    <form action="visitor" method="POST" class="mt-5"  style="margin-top:200px;">
         <div class="form-floating rounded-pill mb-3">
             <input type="number" class="form-control rounded-pill" name="identity_number" id="floatingInput" placeholder="No. Identitas KTP">
             <label for="floatingInput">No. Identitas KTP</label>
@@ -61,15 +83,24 @@
     </form>
 
 </div>
-
+<form method="POST" action="">
+                        @csrf
+                        <div class="col-md-12">
+                            <label class="" for="">Silahkan membuat tandatangan sesuai
+                                 yang diinginkan :
+                            </label>
+                            <br/>
+                            <div id="sig" ></div>
+                            <br/>
+                            <button id="clear" class="btn btn-danger btn-sm">Hapus
+                                 Tandatangan
+                            </button>
+                            <textarea id="signature64" name="signed" style="display:
+                             none">
+                            </textarea>
+                        </div>
+                        <br/>
+                        <button class="btn btn-success">Simpan</button>
+                    </form>
     @endsection
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-    <script type="text/javascript">
-        var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
-        $('#clear').click(function(e) {
-            e.preventDefault();
-            sig.signature('clear');
-            $("#signature64").val('');
-        });
-    </script>
+

@@ -18,8 +18,12 @@ class AuthController extends Controller
         ]);
         // dd($credentials);
         if(auth()->attempt($credentials)){
-            return redirect()->route('visitor.index');
+            return redirect('/dashboard-admin');
         }
+        return redirect('login');
+    }
+    public function logout(){
+        auth()->logout();
         return redirect('login');
     }
 }

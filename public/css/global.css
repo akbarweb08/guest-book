@@ -23,6 +23,12 @@ background-repeat: no-repeat;
 .form-floating .form-control label{
     color:#747474;
 }
+.btn-login{
+    width: 280px;
+    margin-left: 120px;
+    background:#007bff;
+    margin-bottom: 10px;
+}
 @media (min-width: 320px) and (max-width: 767px){
 
 a .logo-navbar{
@@ -30,8 +36,8 @@ a .logo-navbar{
 }
 
 .btn-login{
-    width: 150px;
-    margin-left: 90px;
+    width: 190px;
+    margin-left: 100px;
     background:#007bff;
 }
 
