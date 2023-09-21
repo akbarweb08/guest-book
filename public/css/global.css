@@ -29,6 +29,10 @@ background-repeat: no-repeat;
     background:#007bff;
     margin-bottom: 10px;
 }
+
+.select-costum{
+    border-radius: 20px;
+}
 @media (min-width: 320px) and (max-width: 767px){
 
 a .logo-navbar{
@@ -40,7 +44,9 @@ a .logo-navbar{
     margin-left: 100px;
     background:#007bff;
 }
-
+.select-costum{
+    width: 200px;
+}
 }
 
 

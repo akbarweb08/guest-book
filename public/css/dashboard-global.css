@@ -29,6 +29,14 @@ color: #007BFF;
     background-color: #7BB1FF;
     color: white;
 }
+.input-pencarian{
+background: white;
+height: 40px;
+text-align: justify;
+}
+.input-pencarian:focus{
+    background: white;
+    }
 .sidenav{
 background-image: url('/asset/bg-sidebar.png');
 background-repeat: no-repeat;

@@ -42,9 +42,7 @@
 <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
 
-  <title>
-    SIMAN | {{ $title }}
-  </title>
+     <title>SiCATAT | {{$title}}</title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -94,26 +92,26 @@
           </a>
         </li>
 
-        <li class="nav-item mt-3">
+        {{-- <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Data Master</h6>
-        </li>
+        </li> --}}
 
-        <li class="nav-item">
-          <a class="nav-link text-white <?= ($title === 'Vendor List' ? 'active bg-gradient-primary' : ''); ?> " href="/vendor-list">
+        {{-- <li class="nav-item">
+          <a class="nav-link text-white <?= ($title === 'Perusahaan Tamu' ? 'active bg-gradient-info' : ''); ?> " href="/perusahaan-tamu">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="bi bi-buildings fs-5"></i>
             </div>
             <span class="nav-link-text ms-1">Perusahaan</span>
           </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white <?= ($title === 'Quotation' ? 'active bg-gradient-info' : ''); ?> " href="/quotation">
+        </li> --}}
+        {{-- <li class="nav-item">
+            <a class="nav-link text-white <?= ($title === 'Manajemen User' ? 'active bg-gradient-info' : ''); ?> " href="/manajemen-user">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="bi bi-people fs-5"></i>
               </div>
               <span class="nav-link-text ms-1">Manajemen User</span>
             </a>
-          </li>
+          </li> --}}
 
 
       </ul>
@@ -121,7 +119,7 @@
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
         <button class="btn bg-gradient-danger w-100" type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#modalLogout">
-             <i class="material-icons opacity-10">logout</i> Logout
+             <i class="material-icons opacity-10">logout</i> Keluar
         </button>
 
         <!-- Modal -->
@@ -155,7 +153,6 @@
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
 
-
 @yield('container')
 
   </main>
@@ -166,6 +163,7 @@
   <script src="/dashboard/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="/dashboard/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="/dashboard/js/plugins/chartjs.min.js"></script>
+
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -421,6 +419,11 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+  </script>
+   <script>
+  $(document).ready(function(){
+    $(".preloader").fadeOut();
+  })
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -20,10 +20,10 @@ class AuthController extends Controller
         if(auth()->attempt($credentials)){
             return redirect('/dashboard-admin');
         }
-        return redirect('login');
+        return route('login', ['error' => 'unable_to_authenticate']);
     }
     public function logout(){
         auth()->logout();
-        return redirect('login');
+        return redirect('/');
     }
 }

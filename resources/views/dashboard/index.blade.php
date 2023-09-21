@@ -21,7 +21,8 @@
         <ul class="navbar-nav  justify-content-end">
 
          <li>
-          <h6 class="h6">Sistem Informasi Catat Tamu PT PLN Batam</h6>
+         <h6 class="h6">Sistem Catat Tamu PT PLN Batam</h6>
+
          </li>
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -51,12 +52,12 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-lg mb-0 text-capitalize">Kunjungan Tamu</p>
-              <h4 class="mb-0">sa</h4>
+              <h4 class="mb-0">{{count($visitor)}}</h4>
             </div>
           </div>
           <hr class="dark horizontal my-0">
           <div class="card-footer p-3">
-            <a href="/quotation" class="btn bg-blue mb-0"> Selengkapnya</a>
+            <a href="/buku-tamu" class="btn bg-blue mb-0"> Selengkapnya</a>
 
           </div>
         </div>
@@ -69,12 +70,12 @@
             </div>
             <div class="text-end pt-1">
               <p class="text-lg mb-0 text-capitalize">Perusahaan Tamu</p>
-              <h4 class="mb-0">sa</h4>
+                <h4 class="mb-0">{{count($company)}}</h4>
             </div>
           </div>
           <hr class="dark horizontal my-0">
           <div class="card-footer p-3">
-            <a href="/quotation" class="btn bg-blue mb-0"> Selengkapnya</a>
+            <a href="/perusahaan-tamu" class="btn bg-blue mb-0"> Selengkapnya</a>
 
           </div>
         </div>

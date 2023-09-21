@@ -17,5 +17,18 @@ class Visitor extends Model
         'out_at',
         'signature'
     ];
-    protected $dateFormat = 'Y-m-d H:i:sO';
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('company', 'like', '%' . $search . '%')
+                ->orWhere('identity_number', 'like', '%' . $search . '%')
+                ->orWhere('purpose', 'like', '%' . $search . '%');
+        });
+    }
+    protected $dateFormat = 'Y-m-d H:i:s P';
+    protected $casts = [
+        'out_at' => 'datetime:Y-m-d H:i:s',
+    ];
+
 }
