@@ -8,120 +8,74 @@
         width: 100%;
         height: 260px;
     }
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
 </style>
 
 
 @section('container')
-    <link href="css/select2.css" rel="stylesheet" />
 
-    <div class="container mt-5" style="margin-top:200px;">
-        <br>
-        <form action="visitor" enctype="multipart/form-data" id="form" method="POST" class="mt-5"
-            style="margin-top:200px;">
+{{-- banner  --}}
 
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>
-                        <i class="bi bi-clipboard-check"></i>
-                    </strong> {{ $message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @elseif($message = Session::get('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>
-                        <i class="bi bi-exclamation-triangle"></i>
-                    </strong> {{ $message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
+<div class="jumbotron mt-5 banner-home" style=" background-image: url('/asset/banner-home.png');">
+  <h1 class="display-4 text-white text-center font-weight-bolder">GAMS PT PLN Batam</h1>
+  <h1 class="display-4 text-white text-center">Guest Access Management System PT PLN Batam</h1>
+  <hr class="my-4">
+</div>
+{{-- akhir banner  --}}
 
-            @csrf
-            <div class="form-floating  mb-3">
-                <input type="number" class="form-control " name="identity_number" id="floatingInput"
-                    placeholder="No. Identitas KTP">
-                <label for="floatingInput">No. Identitas KTP</label>
-            </div>
-            <div class="form-floating  mb-3">
-                <input type="text" class="form-control " name="name" id="floatingNama" placeholder="Nama">
-                <label for="floatingNama">Nama</label>
-            </div>
-            <div class="container">
-                <div class="row">
 
-                    <div class=" mb-3">
-                        <select class="form-control  select-costum w-50" id="js-example-basic-single"
-                            name="company">
-                            <option value="">Pilih Perusahaan</option>
-                            @foreach ($companies as $company)
-                                <option value="{{ $company->name }}">{{ $company->name }}</option>
-                            @endforeach
-                        </select>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#tambahPerusahaan">
-                            +
-                        </button>
-                        <label for="">
-                         <small>
-                         Silahkan tambahkan asal perusahaan jika belum ada
-                        </small>
-                         </label>
-                    </div>
+<div class="container">
+
+<h3 class="h3 text-center">Transformasi Penerimaan Tamu Modern</h3>
+<div class="row mt-4">
+
+
+<div class="col-sm-4">
+<div class="card" style="width: 23rem;">
+  <div class="card-body">
+    <h5 class="card-title icon text-center"><i class="bi bi-shield-exclamation"></i></h5>
+    <h6 class="card-subtitle mb-2 text-muted text-center">Keamanan dan Kontrol yang Lebih Baik</h6>
+    <p class="card-text text-center">Aplikasi ini meningkatkan keamanan dengan memberikan kendali yang lebih baik terhadap siapa yang bertamu.</p>
+  </div>
+</div>
+</div>
 
 
 
-                    <!-- Modal -->
 
-                </div>
-            </div>
-            <div class="form-floating  mb-3">
-                <input type="text" class="form-control " id="floatingTujuan" name="purpose"
-                    placeholder="Tujuan">
-                <label for="floatingTujuan">Tujuan</label>
-            </div>
-            <div class="wrapper">
-                <canvas id="signature-pad" class="signature-pad"></canvas>
-            </div>
-            <br>
-            <input type="file" name="signature" id="signature" style="display: none;">
-            <button type="reset" class="btn btn-danger" id="clear-button"><i class="bi bi-trash3"></i> Hapus Tanda
-                Tangan</button>
-            <button type="button" onclick="testSignatureData()" class="btn btn-primary">Simpan</button>
+<div class="col-sm-4">
+<div class="card" style="width: 23rem;">
+  <div class="card-body">
+    <h5 class="card-title icon text-center"><i class="bi bi-file-earmark-person"></i></h5>
+    <h6 class="card-subtitle mb-2 text-muted text-center">Pemantauan dan Pelaporan yang Efisien</h6>
+    <p class="card-text text-center">Aplikasi ini memberikan laporan rinci tentang aktivitas tamu, mempermudah pemantauan dan pelaporan yang lebih efisien.</p>
+  </div>
+</div>
+</div>
 
-            <!-- Modal untuk tampil preview tanda tangan-->
 
-        </form>
-        <div class="modal fade" id="tambahPerusahaan" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Perusahaan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <form action="companies" method="POST">
-                    <div class="modal-body">
-                        @csrf
-                        <div class="form-floating  mb-3">
-                            <input type="text" class="form-control "
-                                placeholder="Nama Perusahaan" id="companiesname">
-                            <label for="floatingInput">Nama Perusahaan</label>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                        <button type="button" onclick="submitCompany()" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
 
-    </div>
 
+
+
+<div class="col-sm-4">
+<div class="card" style="width: 23rem;">
+  <div class="card-body">
+    <h5 class="card-title icon text-center"><i class="bi bi-file-earmark-break"></i></h5>
+    <h6 class="card-subtitle mb-2 text-muted text-center">Kemudahan Administratif</h6>
+    <p class="card-text text-center">Aplikasi ini menyederhanakan tugas administratif, menghemat waktu dan mudah validasi tamu</p>
+  </div>
+</div>
+</div>
+
+
+
+</div>
+
+
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -134,6 +88,8 @@
         // $(document).ready(function() {
         $('#js-example-basic-single').select2();
         // });
+        // Create Document Ready For Javascript Vanilla
+
         var canvas = document.querySelector("canvas");
         var signaturePad = new SignaturePad(canvas);
 
@@ -157,49 +113,5 @@
             form.submit();
         }
 
-        function submitCompany() {
-            let companyValue = document.querySelector("#companiesname").value;
-            fetch("http://localhost:8000/api/companies", {
-                    method: "POST",
-                    body: JSON.stringify({
-                       name: companyValue
-                    }),
-                    headers: {
-                        "Content-type": "application/json; charset=UTF-8"
-                    }
-                })
-                .then((response) => response.json())
-                .then((json) => location.reload());
-        }
-
-        function dataURItoBlob(dataURI) {
-            // convert base64 to raw binary data held in a string
-            // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-            var byteString = atob(dataURI.split(',')[1]);
-
-            // separate out the mime component
-            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
-
-            // write the bytes of the string to an ArrayBuffer
-            var ab = new ArrayBuffer(byteString.length);
-
-            // create a view into the buffer
-            var ia = new Uint8Array(ab);
-
-            // set the bytes of the buffer to the correct values
-            for (var i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-
-            // write the ArrayBuffer to a blob, and you're done
-            var blob = new Blob([ab], {
-                type: mimeString
-            });
-            return blob;
-
-        }
-        // document.querySelector("form").addEventListener("submit", function (e) {
-        //     e.preventDefault();
-        // });
     </script>
 @endsection

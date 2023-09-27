@@ -21,7 +21,7 @@
         <ul class="navbar-nav  justify-content-end">
 
          <li>
-         <h6 class="h6">Sistem Catat Tamu PT PLN Batam</h6>
+         <h6 class="h6">Guest Access Management System PT PLN Batam</h6>
 
          </li>
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

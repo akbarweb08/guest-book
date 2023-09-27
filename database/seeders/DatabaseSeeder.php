@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
                 'identity_number' => '1234567890',
                 'purpose' => 'meeting',
                 'out_at' => date('Y-m-d H:i:s P'),
-                'signature' => 'signature'
+                'signature' => 'signature',
+                'detained_items' => 'laptop',
+                'office' => 'PLN UBINFRA',
+                'status' => 'waiting',
+                'is_given_card' => false,
             ]
         );
 

@@ -19,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[VisitorController::class, 'visitor_form'])->name('login');
+Route::get('/form-tamu',[VisitorController::class, 'visitor_form'])->name('login');
+Route::get('/',[VisitorController::class, 'VisitorHome']);
 Route::post('/visitor',[VisitorController::class, 'store']);
+Route::post('/visitor-approve/{id}',[VisitorController::class, 'approve']);
+Route::post('/visitor-export',[VisitorController::class, 'export']);
 // Route::get('/login', [AuthController::class, 'view_login'])->name('login');
 Route::post('/logout',[AuthController::class, 'logout']);
 Route::post('/login', [AuthController::class, 'process_login']);

@@ -4,6 +4,7 @@
 .bg-navbar{
 background-image: url('/asset/bg-navbar.png');
 background-repeat: no-repeat;
+background-size: cover;
 }
 .navbar {
     top: 0;
@@ -11,6 +12,16 @@ background-repeat: no-repeat;
     right: 0;
     z-index: 1000;
     position: fixed;
+}
+
+.icon{
+    font-size: 65px;
+    color: #24388F;
+}
+.banner-home{
+    background-image: url('/asset/banner-home.png');
+background-repeat: no-repeat;
+background-size: cover;
 }
 .nav-item .btn-login-nav{
     background: #7BB1FF;
@@ -29,7 +40,9 @@ background-repeat: no-repeat;
     background:#007bff;
     margin-bottom: 10px;
 }
-
+.btn-kuning{
+    background-color: #fff200;
+}
 .select-costum{
     border-radius: 20px;
 }
